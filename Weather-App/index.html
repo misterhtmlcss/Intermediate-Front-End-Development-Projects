@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,27 +8,62 @@
 	<title>Show Local Weather: Free Code Camp Project</title>
 </head>
 <body>
-	<img src="#" id="image" alt="">
-		<div id="container">
+	<div id="container">
+		<div class="center">
 			<h1 class="title">Weather App</h1>
-			<h2 class="subtitle">Free Code Camp</h2>
-			<p>Test font</p>
-			<div class="center">
-				<div class="cloud">
-						<div class="item-center">d</div>
-				</div>
-				<div class="temp">
-					<div class="item-center">f</div>
-				</div>
-				<div class="loc">
-					<div class="item-center">g</div>
-				</div>
-			</div>
-			<div id="app">Location</div>
-
-			<div id="weather">Weather</div>
 		</div>
-
+		<div class="center">
+			<h2 class="subtitle">Free Code Camp</h2>
+		</div>
+		<div class="center">
+			<p>Choose between Celcius or Fahrenheit? We default to Fahrenheit</p>
+		</div>
+		<div class="btn-group item-center ">
+			<div class="btn item-center grow" id="celcius">Celcius</div>
+			<div class="btn item-center grow" id="fahrenheit">Fahrenheit</div>
+		</div>
+		<div class="center">
+			<div class="cloud item-center" id="cloudIcon">
+				<!-- append cloud icon here -->
+			</div>
+			<div class="temp item-center">
+				<span class="tempNum" id="degNum"></span>
+				<span class="item-center hide" id="fdeg">&#8457;</span>
+				<span class="item-center" id="cdeg">&#8451;</span>
+			</div>
+		</div>
+	</div>
 	<script src="index.js"></script>
+	<script>
+	const cel = document.getElementById("celcius")
+	const fah = document.getElementById("fahrenheit")
+	let degNum = document.getElementById("degNum")
+	let fdeg = document.getElementById("fdeg")
+	let cdeg = document.getElementById("cdeg")
+	fah.addEventListener("click", toCel)
+	cel.addEventListener("click", toFah)
+
+	function toCel(deg) {
+			appendClass();
+			return degNum.innerText = deg
+	}
+	function toFah(deg) {
+			appendClass();
+			return degNum.innerText = `${deg * 9/5 +32}`
+
+	}
+	function appendClass () {
+			fdeg.classList.toggle("hide");
+			cdeg.classList.toggle("hide");
+	}
+
+
+
+
+
+
+	</script>
+
+
 </body>
 </html>
