@@ -23,16 +23,10 @@ if (navigator.geolocation) {
                                         const { main: {humidity, pressure, temp},
                                                 wind: {speed}, name} = data // descturing the returned object
                                         const {description, icon } = data.weather[0];
-                                        //const {description, icon} = weatherArr
-                                        /* console.log(`Country: ${name}, Humidity: ${humidity}, Weather Description: ${description}, Icon Link: ${icon}, WindSpeed: ${speed}MPH`)  *///test destructued data
-                                        //wholeNum = `${Math.floor(temp)}`
                                         degNum.innerText=`${Math.floor(temp)}`
 
                                         iconMe.innerHTML =
                                         `<img src="${icon}" alt="">`
-
-
-
 
                                 })
                 }

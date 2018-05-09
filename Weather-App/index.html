@@ -40,30 +40,25 @@
 	let degNum = document.getElementById("degNum")
 	let fdeg = document.getElementById("fdeg")
 	let cdeg = document.getElementById("cdeg")
-	fah.addEventListener("click", toCel)
-	cel.addEventListener("click", toFah)
+	fah.addEventListener("click", convTemp)
+	cel.addEventListener("click", convTemp)
 
-	function toCel(deg) {
-			appendClass();
-			return degNum.innerText = deg
-	}
-	function toFah(deg) {
-			appendClass();
-			return degNum.innerText = `${deg * 9/5 +32}`
-
+	function convTemp() {
+		let cTemp = `${Math.floor(temp)}`
+		let fTemp = cTemp*9/5+32
+		let currentTemp = degNum
+		if(currentTemp === cTemp) {
+			return degNum.innerText=fTemp
+		} else {
+			return degNum.innerText=cTemp
+		}
+		appendClass();
+		/* return degNum.innerText = deg */
 	}
 	function appendClass () {
 			fdeg.classList.toggle("hide");
 			cdeg.classList.toggle("hide");
 	}
-
-
-
-
-
-
 	</script>
-
-
 </body>
 </html>
