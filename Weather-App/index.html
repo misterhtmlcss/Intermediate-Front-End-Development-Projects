@@ -17,19 +17,22 @@
 		</div>
 		<div class="center">
 			<p>Choose between Celcius or Fahrenheit? We default to Fahrenheit</p>
-		</div>
+      </div>
 		<div class="btn-group item-center ">
 			<div class="btn item-center grow" id="celcius">Celcius</div>
-			<div class="btn item-center grow" id="fahrenheit">Fahrenheit</div>
-		</div>
+			<div class="btn item-center grow hide" id="fahrenheit">Fahrenheit</div>
+      </div>
+      <div class="center margin">
+         <div class="cloud item-center margin" id="cloudIcon">
+			</div>
+      </div>
 		<div class="center">
-			<div class="cloud item-center" id="cloudIcon">
-				<!-- append cloud icon here -->
+			<!-- <div class="cloud item-center" id="cloudIcon"> -->
 			</div>
 			<div class="temp item-center">
 				<span class="tempNum" id="degNum"></span> <!-- Where the tempurature is defaulted -->
-				<span class="item-center hide" id="fdeg">&#8457;</span>
-				<span class="item-center" id="cdeg">&#8451;</span>
+				<div class="item-center hide" id="fdeg">&#8457;</div>
+				<div class="item-center " id="cdeg">&#8451;</div>
 			</div>
 		</div>
 	</div>
@@ -38,7 +41,7 @@
 
 
 	fah.addEventListener("click", convTemp)
-    cel.addEventListener("click", convTemp)
+   cel.addEventListener("click", convTemp)
 
 
 	</script>

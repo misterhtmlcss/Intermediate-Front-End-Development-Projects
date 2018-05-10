@@ -1,20 +1,25 @@
 const cloudIcon = document.getElementById('cloudIcon')
 const cel = document.getElementById('celcius')
 const fah = document.getElementById('fahrenheit')
-const degNum = document.getElementById('degNum')
+let degNum = document.getElementById('degNum')
 const fdeg = document.getElementById('fdeg')
 const cdeg = document.getElementById('cdeg')
 
-let data, lat, long, url;
+let data, lat, long, url, clouds
 
-let cTemp, gTemp;
+let cTemp
+let gTemp
+
+const cUrl = (lat, long) => {
+   return `https://fcc-weather-api.glitch.me/api/current?lat=${lat}&lon=${long}`
+}
 
 if (navigator.geolocation) {
    navigator.geolocation.getCurrentPosition(position => {
       lat = Math.floor(position.coords.latitude)
       long = Math.floor(position.coords.longitude)
 
-      getWeather(cUrl(lat, lomng))
+      getWeather(cUrl(lat, long))
    })
 } else {
    console.log("looks like something is broke when calling the gelocation method")
@@ -45,24 +50,35 @@ function returnData() {
       description,
       icon
    } = data.weather[0]
+   /* debugger */
+   clouds = icon;
+   if (clouds !== null | undefined) {
+      cloudIcon.innerHTML = `<img src="${clouds}" alt="Weather Image Not Loaded">`
+   }
    gTemp = `${Math.floor(temp)}`
+   degNum.textContent = gTemp
 }
+
 
 
 function toF(cel) {
    return cel * 9 / 5 + 32
 }
-
-function convTemp(gtemp) {
+/* debugger */
+function convTemp() {
    const fTemp = toF(gTemp)
-   if (degNum === gTemps) {
-      degNum.textContent = gtemp
+   if (degNum.textContent != gTemp) {
+      degNum.textContent = gTemp
+      appendClass()
    } else {
       degNum.textContent = fTemp
+      appendClass()
    }
-appendClass()
+
 }
 function appendClass() {
-   fdeg.classList.toggle('hide')
+   cel.classList.toggle('hide')
    cdeg.classList.toggle('hide')
+   fdeg.classList.toggle('hide')
+   fah.classList.toggle('hide')
 }
