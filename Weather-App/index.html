@@ -27,7 +27,7 @@
 				<!-- append cloud icon here -->
 			</div>
 			<div class="temp item-center">
-				<span class="tempNum" id="degNum"></span>
+				<span class="tempNum" id="degNum"></span> <!-- Where the tempurature is defaulted -->
 				<span class="item-center hide" id="fdeg">&#8457;</span>
 				<span class="item-center" id="cdeg">&#8451;</span>
 			</div>
@@ -35,30 +35,12 @@
 	</div>
 	<script src="index.js"></script>
 	<script>
-	const cel = document.getElementById("celcius")
-	const fah = document.getElementById("fahrenheit")
-	let degNum = document.getElementById("degNum")
-	let fdeg = document.getElementById("fdeg")
-	let cdeg = document.getElementById("cdeg")
-	fah.addEventListener("click", convTemp)
-	cel.addEventListener("click", convTemp)
 
-	function convTemp() {
-		let cTemp = `${Math.floor(temp)}`
-		let fTemp = cTemp*9/5+32
-		let currentTemp = degNum
-		if(currentTemp === cTemp) {
-			return degNum.innerText=fTemp
-		} else {
-			return degNum.innerText=cTemp
-		}
-		appendClass();
-		/* return degNum.innerText = deg */
-	}
-	function appendClass () {
-			fdeg.classList.toggle("hide");
-			cdeg.classList.toggle("hide");
-	}
+
+	fah.addEventListener("click", convTemp)
+    cel.addEventListener("click", convTemp)
+
+
 	</script>
 </body>
 </html>
