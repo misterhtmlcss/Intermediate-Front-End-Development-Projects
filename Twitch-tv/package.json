@@ -1,0 +1,22 @@
+{
+  "name": "twitch-tv",
+  "version": "1.0.0",
+  "description": "FCC Intermediate Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/misterhtmlcss/weather-app.git"
+  },
+  "keywords": [
+    "fcc"
+  ],
+  "author": "misterhtmlcss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/misterhtmlcss/weather-app/issues"
+  },
+  "homepage": "https://github.com/misterhtmlcss/weather-app#readme"
+}
