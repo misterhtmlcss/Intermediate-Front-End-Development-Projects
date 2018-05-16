@@ -30,7 +30,9 @@ function getUserData () {
       })
   })
 }
-
+/*
+Issue is with the below function. offline and online are undefined. Tried const, tried globals, tried building differently. Not familiar enough (I assume) to figure out how come they are still undefined at this stage.
+*/
 function createContainer(username, logoImg, url, status) {
   if (status == undefined || null){
     offline = offline.setAttribute('class', 'wrapper offline')
