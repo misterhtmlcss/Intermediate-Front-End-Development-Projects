@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* .hide {
+  display: none;
+} */
+
+.wrapper {
+  background-color: rgba (255, 13, 255, 0.3);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+div .offline {
+  background-color: rgba(red, 0.3);
+}
+
+div .online {
+  background-color: rgba(green, 0.3);
+  border: 1px green solid;
+}
